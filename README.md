@@ -1,4 +1,5 @@
 💢 Antagonistic Agents 🤖
+=========================
 
 This is a joke project trying to make an `AGENTS.md` file that is completely adherent to the `AGENTS.md` specification, but tries to make using AI agents on a repository as annoying and costly as possible.
 
