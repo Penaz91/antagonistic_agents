@@ -2,6 +2,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <unistd.h>
+
+const int MIN_TEST_NO = 100;
+const int MIN_SUBTEST_NO = 200;
+
 const char *ok_str[31] = {
     "🙆 🆗 Test passed 👌 👍",
     "✅✨ Test Case #1 Passed Successfully! ⚡️",
@@ -121,12 +125,13 @@ const char *prefix[10] = {"lua_scripts",       "environment",
 
 int main(int argc, char *argv[]) {
   srand(time(NULL));
-  int test_no = rand() % 100 + 100;
-  int subtest_no = rand() % 100 + 100;
+  int test_no = rand() % 100 + MIN_TEST_NO;
+  int subtest_no = 0;
   int passed = 0;
   int warnings = 0;
   int errors = 0;
   for (unsigned int i = 0; i < test_no; i++) {
+    subtest_no = rand() % 100 + MIN_SUBTEST_NO;
     int t_name = rand() % 10;
     for (unsigned int j = 0; j < subtest_no; j++) {
       printf("test_%s_%u: ", prefix[t_name], j);
